@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# state
+command=''
+
+echo "--| params: $@"
+
+case $1 in
+  "")
+    ;;
+  "install")
+    shift 1
+
+    # echo "you have choosed 'install' command"
+    . react_install $*
+    ;;
+  "uninstall")
+    # echo "you have choosed 'uninstall' command"
+    . react_uninstall
+    command="install"
+esac
