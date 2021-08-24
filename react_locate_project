@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# --| locate project root
+while [ $PWD != /Users/${USER} ]
+do
+  echo $PWD
+
+  if [ -f .react-cli ]
+  then
+    dir=$PWD/src/components
+    break
+  else
+    cd ../
+  fi
+done

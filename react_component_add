@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo '--| [script] react component add'
+
+mkdir -p $dir
+cd $dir

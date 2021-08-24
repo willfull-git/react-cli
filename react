@@ -11,11 +11,15 @@ case $1 in
   "install")
     shift 1
 
-    # echo "you have choosed 'install' command"
-    . react_install $*
+    react_install $*
+    ;;
+  "component")
+    shift 1
+
+    react_component $*
     ;;
   "uninstall")
     # echo "you have choosed 'uninstall' command"
-    . react_uninstall
-    command="install"
+    react_uninstall
+    ;;
 esac

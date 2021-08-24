@@ -1,0 +1,28 @@
+#!/bin/bash
+
+dir=''
+
+. react_locate_project
+
+echo " -| project root is: $dir"
+
+case $1 in
+  "")
+    ;;
+  "add")
+    shift 1
+
+    echo ' -| add component'
+    . react_component_add
+    ;;
+  "remove")
+    shift 1
+
+    echo ' -| remove component'
+
+    # react_component $*
+    ;;
+  "")
+    echo ' -| supply option for component command'
+    #react_uninstall
+esac
