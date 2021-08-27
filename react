@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# state
-command=''
-
-echo "--| params: $@"
+# echo "--| params: $@"
 
 case $1 in
   "")
@@ -19,7 +16,6 @@ case $1 in
     react_component $*
     ;;
   "uninstall")
-    # echo "you have choosed 'uninstall' command"
     react_uninstall
     ;;
 esac

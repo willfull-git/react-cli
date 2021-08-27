@@ -3,23 +3,22 @@
 $dir=""
 
 echo "--| command: react install"
-echo " -| options ${*}"
 
 # ---| Validate command options
 while getopts ":n:" o;
 do
   case $o in
     n)
-      echo " -| option '$o' = ${OPTARG}"
+      # echo " -| option '$o' = ${OPTARG}"
       dir=$OPTARG
       ;;
     :)
-      echo " -| option '$o' has no value"
+      # echo " -| option '$o' has no value"
       ;;
   esac
 done
 
-echo " -| dir: ${dir}"
+# echo " -| dir: ${dir}"
 
 # ---| Perform installation
 if test $dir
@@ -27,12 +26,11 @@ then
   echo " -| clone repo to: $dir"
 
   git clone -q https://github.com/willfull-git/react-base $dir && cd $dir
-  mkdir $dir && cd ./$dir
-
-  npm i
+  
   echo " -| install npm packages"
+  npm i --silent
 
   echo " -| done"
 else
-  echo " -| operation discard"
+  echo " -| operation failed"
 fi
