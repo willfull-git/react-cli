@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$dir=""
+dirProject=""
 
 echo "--| command: react install"
 
@@ -10,7 +10,7 @@ do
   case $o in
     n)
       # echo " -| option '$o' = ${OPTARG}"
-      dir=$OPTARG
+      dirProject=$OPTARG
       ;;
     :)
       # echo " -| option '$o' has no value"
@@ -18,14 +18,13 @@ do
   esac
 done
 
-# echo " -| dir: ${dir}"
-
 # ---| Perform installation
-if test $dir
+if test $dirProject
 then
-  echo " -| clone repo to: $dir"
+  echo " -| clone repo to: $dirProject"
 
-  git clone -q https://github.com/willfull-git/react-base $dir && cd $dir
+  git clone -q https://github.com/willfull-git/react-base $dirProject && cd $dirProject
+  touch .react-cli
   
   echo " -| install npm packages"
   npm i --silent

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # echo "--| params: $@"
+dirCli=$(dirname $0)
 
 case $1 in
   "")
@@ -8,14 +9,14 @@ case $1 in
   "install")
     shift 1
 
-    react_install $*
+    . react_install $*
     ;;
   "component")
     shift 1
 
-    react_component $*
+    . react_component $*
     ;;
   "uninstall")
-    react_uninstall
+    . react_uninstall
     ;;
 esac

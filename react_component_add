@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo '--| [script] react component add'
+echo '--| react component add'
 
-mkdir -p $dir
-cd $dir
+# echo $dirCli
+# echo $dirProject
+
+mkdir -p $dirProject/$1 && cd $dirProject/$1
+cp $dirCli/templates/component.js $dirProject/$1

@@ -1,10 +1,17 @@
 #!/bin/bash
 
-dir=''
+dirProject='is visible'
 
 . react_locate_project
 
-echo " -| project root is: $dir"
+echo " -| project components dir is: $dirProject"
+
+if [ -z $2 ]
+then
+  echo " -| write name for a component"
+else
+  echo " -| component name: $2"
+fi
 
 case $1 in
   "")
@@ -13,14 +20,14 @@ case $1 in
     shift 1
 
     echo ' -| add component'
-    . react_component_add
+    . react_component_add $2
     ;;
   "remove")
     shift 1
 
     echo ' -| remove component'
 
-    # react_component $*
+    # react_component_remove $*
     ;;
   "")
     echo ' -| supply option for component command'
