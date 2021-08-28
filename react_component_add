@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 echo '--| react component add'
+cmpName=${1#*/}
+cmpName=${cmpName^}
 
 # echo $dirCli
 # echo $dirProject
 
 mkdir -p $dirProject/$1 && cd $dirProject/$1
-cp $dirCli/templates/component.js $dirProject/$1
+cp $dirCli/templates/component.js $dirProject/$1/$cmpName.js
