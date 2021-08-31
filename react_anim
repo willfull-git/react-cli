@@ -1,0 +1,24 @@
+#!/usr/local/bin/bash
+
+count=0;
+
+anim[0]='|'
+anim[1]='/'
+anim[2]='-'
+anim[3]='\'
+anim[4]='|'
+anim[5]='/'
+anim[6]='-'
+anim[7]='\'
+
+while [ $count -le 10 ]
+do
+  if [ $count == 0 ]
+  then
+    echo -e " -| ${anim[0]}"
+  else
+    echo -e "\e[1A -| ${anim[$(( (count + 7) % 7 ))]}"
+  fi
+  sleep .25
+  count=$(( $count + 1 ))
+done

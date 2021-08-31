@@ -25,9 +25,11 @@ then
 
   git clone -q https://github.com/willfull-git/react-base $dirProject && cd $dirProject
   touch .react-cli
+  touch .react-cli-log
   
+  . react_anim
   echo " -| install npm packages"
-  npm i --silent
+  npm i --silent > .react-cli-log
 
   echo " -| done"
 else
